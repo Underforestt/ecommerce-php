@@ -12,28 +12,16 @@
 <body>
     <div class="container">
         <div class="starter-template">
-            <div class="panel">
-                <a href="/mobiles">
-                    <img src="https://miro.medium.com/max/2560/1*goGPwn50r5CuNC_dlXnU9A.jpeg" alt="">
-                    <h2>Mobiles</h2>
-                </a>
-                <p>The most popular mobile phones</p>
-            </div>
-            <div class="panel">
-                <a href="/portable">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1yF7mwUQkMpJ73XAhfMUzpP73CDKNKO_RQ&usqp=CAU" alt="">
-                    <h2>Portable</h2>
-                </a>
-                <p>The most popular portable devices</p>
-            </div>
-            <div class="panel">
-                <a href="/appliances">
-                    <img src="http://retail-loyalty.org/upload/iblock/875/5b3d1e7d370975ca6d9f713769dde98d.jpg" alt="">
-                    <h2>Home devices</h2>
-                </a>
-                <p>The most popular home technic</p>
-            </div>
-        </div>
-    </div>
+            @foreach($categories as $category)
+                <div class="panel">
+                    <a href="/{{$category->code}}">
+                        <img src="https://miro.medium.com/max/2560/1*goGPwn50r5CuNC_dlXnU9A.jpeg" alt="">
+                        <h2>{{$category->name}}</h2>
+                    </a>
+                    <p>
+                        {{$category->description}}
+                    </p>
+                </div>
+            @endforeach
 </body>
 </html>
